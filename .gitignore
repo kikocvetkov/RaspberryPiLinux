@@ -1,3 +1,4 @@
 build/
 poky/
 meta-raspberrypi/
+meta-kiko/

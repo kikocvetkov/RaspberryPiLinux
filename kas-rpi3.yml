@@ -7,19 +7,20 @@ distro: poky
 
 target: core-image-full-cmdline
 
-defaults:
-  repos:
-    branch: "kirkstone"
-
 repos:
   poky:
     url: "https://git.yoctoproject.org/git/poky"
+    branch: "kirkstone"
     layers: 
       meta:
       meta-poky:
 
   meta-raspberrypi:
     url: "https://github.com/agherzan/meta-raspberrypi.git"
+    branch: "kirkstone"
+  meta-kiko:
+    url: "https://github.com/kikocvetkov/meta-kiko.git"
+    branch: "main"
     
 local_conf_header:
   setup: |

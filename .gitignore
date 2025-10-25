@@ -2,3 +2,4 @@ build/
 poky/
 meta-raspberrypi/
 meta-kiko/
+meta-openembedded/

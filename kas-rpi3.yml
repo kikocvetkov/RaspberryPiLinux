@@ -18,6 +18,14 @@ repos:
   meta-raspberrypi:
     url: "https://github.com/agherzan/meta-raspberrypi.git"
     branch: "kirkstone"
+
+  meta-openembedded:
+    url: "https://git.openembedded.org/meta-openembedded"
+    branch: kirkstone
+    layers:
+      meta-oe:
+      meta-python:
+
   meta-kiko:
     url: "https://github.com/kikocvetkov/meta-kiko.git"
     branch: "main"
@@ -25,5 +33,12 @@ repos:
 local_conf_header:
   setup: |
     ENABLE_UART = "1"
+    IMAGE_INSTALL:append = " sudo python3 python3-pip rpi-gpio raspi-gpio my-cpp-app"
+    IMAGE_FEATURES:append = " ssh-server-openssh"
     DISTRO_FEATURES:append = " systemd"
-    VIRTUAL-RUNTIME_init_manager = "systemd"
+    VIRTUAL-RUNTIME:init_manager = "systemd"
+    VIRTUAL-RUNTIME:initscripts = ""
+    IMX_DEFAULT_DISTRO_FEATURES:append = " systemd"
+    IMAGE_FSTYPES = "ext4.xz rpi-sdimg"
+    SDIMG_ROOTFS_TYPE = "ext4.xz"
+    EXTRA_IMAGE_FEATURES:append = " debug-tweaks tools-debug"

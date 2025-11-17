@@ -33,8 +33,7 @@ repos:
 local_conf_header:
   setup: |
     ENABLE_UART = "1"
-    IMAGE_INSTALL:append = " sudo python3 python3-pip rpi-gpio raspi-gpio my-cpp-app"
-    IMAGE_FEATURES:append = " ssh-server-openssh"
+    IMAGE_INSTALL:append = " sudo python3 python3-pip rpi-gpio raspi-gpio libgpiod my-cpp-app"
     DISTRO_FEATURES:append = " systemd"
     VIRTUAL-RUNTIME:init_manager = "systemd"
     VIRTUAL-RUNTIME:initscripts = ""
